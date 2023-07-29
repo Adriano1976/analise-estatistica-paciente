@@ -1,0 +1,15 @@
+ModaIdade = 
+VAR TabelaFrequencia =
+    SUMMARIZE (
+        dados_pacientes,
+        dados_pacientes[idade(anos)],
+        "Frequência", COUNT ( dados_pacientes[idade(anos)] )
+    )
+VAR MaiorFrequencia =
+    MAXX ( TabelaFrequencia, [Frequência] )
+RETURN
+    CONCATENATEX (
+        FILTER ( TabelaFrequencia, [Frequência] = MaiorFrequencia ),
+        dados_pacientes[idade(anos)],
+        ", "
+    )
