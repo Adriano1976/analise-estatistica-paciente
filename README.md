@@ -1,4 +1,4 @@
-# Analise Estatística Paciente
+# Analise Estatística dos Pacientes da Clínica Saúde Total
 
 ![Análise Estatística dos Pacientes](https://github.com/Adriano1976/analise-estatistica-paciente/assets/17755195/5d5ab9b6-c10d-4d5e-9710-8c1d49c91c6e)
 
