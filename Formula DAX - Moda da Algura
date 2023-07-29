@@ -1,0 +1,15 @@
+ModaAltura = 
+VAR TabelaFrequencia =
+    SUMMARIZE (
+        dados_pacientes,
+        dados_pacientes[altura(cm)],
+        "Frequência", COUNT ( dados_pacientes[altura(cm)] )
+    )
+VAR MaiorFrequencia =
+    MAXX ( TabelaFrequencia, [Frequência] )
+RETURN
+    CONCATENATEX (
+        FILTER ( TabelaFrequencia, [Frequência] = MaiorFrequencia ),
+        dados_pacientes[altura(cm)],
+        ", "
+    )
