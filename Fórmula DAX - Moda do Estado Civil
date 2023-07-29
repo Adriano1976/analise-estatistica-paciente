@@ -1,0 +1,15 @@
+ModaEstadoCivil = 
+VAR TabelaFrequencia =
+    SUMMARIZE (
+        dados_pacientes,
+        dados_pacientes[estado_civil],
+        "Frequência", COUNT ( dados_pacientes[estado_civil] )
+    )
+VAR MaiorFrequencia =
+    MAXX ( TabelaFrequencia, [Frequência] )
+RETURN
+    CONCATENATEX (
+        FILTER ( TabelaFrequencia, [Frequência] = MaiorFrequencia ),
+        dados_pacientes[estado_civil],
+        ", "
+    )
