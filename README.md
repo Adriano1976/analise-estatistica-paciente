@@ -1,5 +1,7 @@
 # Analise Estatística Paciente
 
+![Análise Estatística dos Pacientes](https://github.com/Adriano1976/analise-estatistica-paciente/assets/17755195/5d5ab9b6-c10d-4d5e-9710-8c1d49c91c6e)
+
 ## As métricas usadas nesse relatório feitos no Power BI são as seguintes:
 
 * A média de idade e peso dos pacientes, que são calculadas somando as idades e pesos de todos os pacientes e dividindo pelo número total de pacientes.
