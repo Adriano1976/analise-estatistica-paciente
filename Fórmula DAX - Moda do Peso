@@ -1,0 +1,15 @@
+ModaPeso = 
+VAR TabelaFrequencia =
+    SUMMARIZE (
+        dados_pacientes,
+        dados_pacientes[peso(kg)],
+        "Frequência", COUNT ( dados_pacientes[peso(kg)])
+    )
+VAR MaiorFrequencia =
+    MAXX ( TabelaFrequencia, [Frequência] )
+RETURN
+    CONCATENATEX (
+        FILTER ( TabelaFrequencia, [Frequência] = MaiorFrequencia ),
+        dados_pacientes[peso(kg)],
+        ", "
+    )
