@@ -1,0 +1,15 @@
+ModaTipoSanguineo = 
+VAR TabelaFrequencia =
+    SUMMARIZE (
+        dados_pacientes,
+        dados_pacientes[tipo_sanguineo],
+        "Frequência", COUNT ( dados_pacientes[tipo_sanguineo])
+    )
+VAR MaiorFrequencia =
+    MAXX ( TabelaFrequencia, [Frequência] )
+RETURN
+    CONCATENATEX (
+        FILTER ( TabelaFrequencia, [Frequência] = MaiorFrequencia ),
+        dados_pacientes[tipo_sanguineo],
+        ", "
+    )
